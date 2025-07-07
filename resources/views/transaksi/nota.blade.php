@@ -47,7 +47,7 @@
 </style>
 
 <div class="nota-header">
-    <h2>Toko Roti Amel</h2>
+    <h2>Bake Fyne</h2>
     <p><strong>Nota Transaksi #{{ $transaksi->id }}</strong></p>
     <p><strong>Tanggal:</strong> {{ $transaksi->created_at->format('d-m-Y H:i') }}</p>
 </div>

@@ -150,7 +150,7 @@
 
     <div class="sidebar">
         <div>
-            <h3>🍞 Toko Roti</h3>
+            <h3>🍞 Bake Fyne</h3>
             <a href="{{ route('dashboard') }}">🏠 Dashboard</a>
             <a href="{{ route('rotis.index') }}">🥐 Kelola Produk</a>
             <a href="{{ route('transaksi.index') }}">🛒 Transaksi</a>
