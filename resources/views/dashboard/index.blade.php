@@ -17,5 +17,42 @@
     </div>
 </div>
 
+<h3 style="margin-top: 40px; color: #6b2d5c;">📊 Grafik Transaksi per Hari</h3>
+<canvas id="grafikTransaksi" width="400" height="200"></canvas>
 
+{{-- Chart JS --}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = @json($chartData->pluck('tanggal'));
+    const dataJumlah = @json($chartData->pluck('jumlah'));
+    const dataPendapatan = @json($chartData->pluck('total'));
+
+    const ctx = document.getElementById('grafikTransaksi').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Jumlah Transaksi',
+                    data: dataJumlah,
+                    backgroundColor: '#fbbf24'
+                },
+                {
+                    label: 'Total Pendapatan',
+                    data: dataPendapatan,
+                    backgroundColor: '#34d399'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 @endsection
